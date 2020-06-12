@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .toCaps{
+            text-transform:uppercase;
+        }
+    </style>
+</head>
+<body style="background-image:url('/Images/Adminbg.jpg'); background-size:cover; background-attachment:fixed; ">
+    <form id="AdminMaster" runat="server">
+    <div>
+        <table style="width:1100px; margin:0 auto;" align="center" border="0">
+            <tr style="width:100%; height:50px;border-color:#108763; background-color:rgba(16, 135, 99, 0.80);" align="center">
+                <td style="width:50px;">
+                    <asp:Image ID="LOGO" runat="server" ImageUrl="~/Images/FudeyVilla_logo.png" Height="124px" Width="220px" /></td>
+                <td>
+                    <asp:Label ID="Title" runat="server" Text="Fudey Villa .COM" BorderStyle="None" Font-Bold="True" Font-Italic="True" Font-Names="Chiller" Font-Size="42pt" Font-Underline="False"></asp:Label>
+                </td>
+            </tr>
+            <tr style="width:100%; height:30px; align-content:center; background-color:rgba(38, 71, 87, 0.80);">
+                <td colspan="2">
+                    
+                    <table style="height:30px; width:100%;">
+                        <tr>
+                            <td align="left">
+                                <asp:Menu ID="Navigation" runat="server" BackColor="#F7F6F3" BorderStyle="None" DynamicHorizontalOffset="2" Font-Bold="True" Font-Italic="True" Font-Names="Verdana" Font-Size="1em" ForeColor="#7C6F57" Orientation="Horizontal" StaticSubMenuIndent="10px">
+                                    <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                                    <DynamicMenuItemStyle HorizontalPadding="20px" VerticalPadding="2px" /><DynamicMenuStyle BackColor="#F7F6F3" />
+                                    <DynamicSelectedStyle BackColor="#5D7B9D" />
+                                    <Items>
+                                        <asp:MenuItem NavigateUrl="~/AdminHome.aspx" Text="ADMIN HOME" Value="ADMIN HOME"></asp:MenuItem>
+                                        <asp:MenuItem Text="HOME" Value="HOME" NavigateUrl="~/Home.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="ADD CATEGORY" Value="ADD CATEGORY" NavigateUrl="~/AddCategory.aspx"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/AddRecipe.aspx" Text="ADD RECIPE" Value="ADD RECIPE"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/UpdateRecipe.aspx" Text="UPDATE RECIPE" Value="UPDATE RECIPE"></asp:MenuItem>
+
+                                    </Items>
+                                    <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" BorderStyle="None" Font-Bold="True" Font-Italic="True" />
+                                    <StaticMenuItemStyle HorizontalPadding="20px" VerticalPadding="2px" />
+                                    <StaticSelectedStyle BackColor="#5D7B9D" />
+
+                                </asp:Menu>
+                            </td>
+                            <td align="right">
+                                <asp:Button ID="ButtonSignOut" runat="server" Text="SIGN OUT" BackColor="#F7F6F3" BorderStyle="None" Font-Bold="True" Font-Italic="True" Font-Names="Verdana" Font-Size="1em" ForeColor="#7C6F57" OnClick="ButtonSignOut_Click"  CausesValidation="False" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+
+            <tr style="width:100%;" >
+                <td colspan="2" >
+                    <asp:ContentPlaceHolder id="ContentPlaceHolderAdminOperation" runat="server">
+
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+
+
+            <tr style="width:100%; height:25px; background-color:rgba(190, 93, 93, 0.80); text-align:center; color:#043727;">
+                <td colspan="2">
+                    <h4>
+                        &copy Fudey Villa .COM | All Rights Reserved.
+                    </h4> 
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+    </form>
+</body>
+</html>
